@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>閲覧ページの選択 | SCSKのふるさと納税</title>
+    <link rel="stylesheet" href="./assets/css/font-inter.css">
+    <link rel="stylesheet" href="./assets/css/font-montserrat.css">
+    <style>
+      :root {
+        --bg: #f5f7fb;
+        --panel: #ffffff;
+        --border: #e5e7eb;
+        --text: #0f172a;
+        --muted: #475569;
+        --accent: #005bac;
+        --accent-2: #f39200;
+        --shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Inter", "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #f5f7fb 0%, #eef2ff 100%);
+        color: var(--text);
+      }
+      header {
+        padding: 24px 20px;
+        text-align: center;
+      }
+      header .brand {
+        display: inline-flex;
+        gap: 12px;
+        align-items: center;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--accent);
+      }
+      header .brand small {
+        display: block;
+        color: var(--muted);
+        font-weight: 500;
+      }
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 12px 20px 48px;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 26px;
+        letter-spacing: 0.01em;
+      }
+      .lead {
+        margin: 0 0 20px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .notice {
+        padding: 14px 16px;
+        border-radius: 12px;
+        background: rgba(0, 91, 172, 0.08);
+        border: 1px dashed rgba(0, 91, 172, 0.35);
+        color: #0b3666;
+        margin-bottom: 18px;
+        font-weight: 600;
+      }
+      .choices {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        margin: 12px 0 8px;
+      }
+      .choice {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 18px 18px 16px;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .choice h2 {
+        margin: 0;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        background: rgba(0, 91, 172, 0.12);
+        color: var(--accent);
+      }
+      .pill.secondary {
+        background: rgba(243, 146, 0, 0.12);
+        color: var(--accent-2);
+      }
+      .choice p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+        flex: 1;
+      }
+      .buttons {
+        display: flex;
+        gap: 10px;
+      }
+      .buttons a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 14px;
+        border-radius: 10px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+        border: 1px solid transparent;
+        width: 100%;
+      }
+      .buttons a:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+      }
+      .highlight {
+        font-weight: 700;
+        color: #c1121f;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #005bac, #0a78d1);
+        color: #ffffff;
+      }
+      .btn-outline {
+        background: #ffffff;
+        color: var(--accent);
+        border-color: rgba(0, 91, 172, 0.3);
+      }
+      .footnote {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      footer {
+        text-align: center;
+        padding: 18px 20px 28px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      @media (max-width: 640px) {
+        .buttons { flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span>SCSK ふるさと納税 模擬サイト</span>
+        <small>大学授業プロジェクト | 調査用</small>
+      </div>
+    </header>
+    <main>
+      <section class="card">
+        <h1>閲覧するページを選択してください</h1>
+        <p class="lead">本サイトはアンケート調査用の模擬ページです。実際の寄付受付は行いません。SCSKの許可のもと、ふるさと納税ページの見やすさと寄付意欲への影響を検証しています。</p>
+        <div class="notice">注意：条件Aのアンケート実施は完了しています。引き続き内容確認用として閲覧できます。</div>
+        <div class="choices">
+          <div class="choice">
+            <h2><span class="pill secondary">条件A</span>概要ページのみ</h2>
+            <p>寄付に関する基本情報のみを掲載した構成です。アンケートは終了済みですが、参考閲覧としてアクセスできます。</p>
+            <div class="buttons">
+              <a class="btn-outline" href="project_overview_a.html?variant=a">条件Aを閲覧する</a>
+            </div>
+          </div>
+          <div class="choice">
+            <h2><span class="pill">条件B</span>概要 + ストーリーLP</h2>
+            <p>概要ページに加え、社会的背景やストーリー性を強調したLPへ遷移する構成です。<span class="highlight">現行調査の主対象</span>です。</p>
+            <div class="buttons">
+              <a class="btn-primary" href="project_overview_b.html?variant=b">条件Bを閲覧する</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      本ページはアンケート調査用の模擬サイトです。実際の寄付受付や決済は行われません。
+    </footer>
+  </body>
+</html>
