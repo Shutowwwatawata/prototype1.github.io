@@ -702,9 +702,14 @@
         display: flex;
         gap: 10px;
         align-items: flex-start;
-        justify-content: flex-start;
+        justify-content: space-between;
         width: 100%;
         flex-wrap: wrap;
+      }
+      .disclaimer-actions {
+        display: inline-flex;
+        gap: 10px;
+        flex-shrink: 0;
       }
       .disclaimer-text {
         display: block;
@@ -747,6 +752,53 @@
       .no-action {
         pointer-events: none;
         cursor: default;
+      }
+      .banner-toggle {
+        border: 1px solid #cbd5e1;
+        background: #f8fafc;
+        color: #0f172a;
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-weight: 700;
+        font-size: 12px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+      }
+      .banner-toggle:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+      }
+      .banner-toggle:active {
+        transform: translateY(0);
+        box-shadow: none;
+      }
+      .banner-toggle-container {
+        position: sticky;
+        top: 0;
+        z-index: 80;
+        display: none;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        justify-content: flex-end;
+        padding: 8px 16px;
+        background: transparent;
+      }
+      body.banner-hidden .banner-toggle-container {
+        display: flex;
+      }
+      body.banner-hidden .banner-toggle-show {
+        display: inline-flex;
+      }
+      body.banner-hidden .disclaimer-banner {
+        display: none;
+      }
+      body.banner-hidden [data-banner-hide] {
+        display: none;
       }
       .donation-modal-backdrop {
         position: fixed;
@@ -905,11 +957,17 @@
         </nav>
       </div>
     </header>
+    <div class="banner-toggle-container">
+      <button type="button" class="banner-toggle banner-toggle-show" data-banner-show>バナーを表示する</button>
+    </div>
     <div class="disclaimer-banner" role="alert">
       <div class="disclaimer-banner__inner">
         <span class="disclaimer-variant">
           <span class="disclaimer-variant__chip" data-variant-chip>A</span>
           <span data-variant-label>閲覧中：条件A（概要のみ）</span>
+        </span>
+        <span class="disclaimer-actions">
+          <button type="button" class="banner-toggle" data-banner-hide>バナーを非表示にする</button>
         </span>
         <span class="disclaimer-text">
           本ページは、アンケート調査を目的として作成された「SCSKのふるさと納税」ページの模擬サイトです。実際の寄付受付は行っておりません。<br>なお、本アンケートの実施および本ページの公開については、SCSKの許可を得ています。
@@ -2277,6 +2335,15 @@
         document.querySelectorAll("[data-variant-chip]").forEach((el) => {
           el.textContent = variant.toUpperCase();
         });
+
+        const hideBtn = document.querySelector("[data-banner-hide]");
+        const showBtn = document.querySelector("[data-banner-show]");
+        const setBannerVisible = (visible) => {
+          document.body.classList.toggle("banner-hidden", !visible);
+        };
+        setBannerVisible(true);
+        hideBtn?.addEventListener("click", () => setBannerVisible(false));
+        showBtn?.addEventListener("click", () => setBannerVisible(true));
       })();
     </script>
   </body>
