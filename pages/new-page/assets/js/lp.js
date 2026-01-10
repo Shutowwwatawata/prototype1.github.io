@@ -81,9 +81,14 @@ $('.slider-nav').slick({
   asNavFor: '.slider-fv',
 });
 
-$(window).on('load', function (){
-  var projectHeight = $('.sec-01 .block-01').height();
-  $('#project-detail').height(projectHeight);
+$(window).on('load', function () {
+  var $hero = $('.csp-hero');
+  var $legacyBlock = $('.sec-01 .block-01');
+  var projectHeight = $hero.length ? $hero.outerHeight() : $legacyBlock.height();
+
+  if (projectHeight) {
+    $('#project-detail').height(projectHeight);
+  }
 });
 
 $('.more-btn').on('click', function() {
