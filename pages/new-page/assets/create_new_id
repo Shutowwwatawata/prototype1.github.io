@@ -1,0 +1,1 @@
+ShanonCAMGlobal = {"newVID":"1MikyjOUodQla9V2","newSID":"YqdNzIUybQGgryaa-42","secureFlag":0,"useNewServer":"1"};
