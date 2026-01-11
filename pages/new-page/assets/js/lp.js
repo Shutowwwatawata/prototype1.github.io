@@ -38,18 +38,22 @@ if ($('.slider-company').length) {
   var tabletSlidesToShow = Math.min(4, baseSlidesToShow);
   var mobileSlidesToShow = Math.min(2, baseSlidesToShow);
   var needsScroll = columnCount > baseSlidesToShow;
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var autoplayEnabled = needsScroll && !prefersReducedMotion;
 
   $slider.slick({
-    infinite: false,
+    infinite: true,
     arrows: false,
     dots: false,
-    autoplay: needsScroll,
-    autoplaySpeed: 2000,
-    speed: 600,
+    autoplay: autoplayEnabled,
+    autoplaySpeed: 2400,
+    speed: 650,
+    cssEase: 'ease-out',
     slidesToShow: baseSlidesToShow,
     slidesToScroll: 1,
+    swipeToSlide: true,
     pauseOnHover: true,
-    pauseOnFocus: false,
+    pauseOnFocus: true,
     responsive: [
       {
         breakpoint: 1024,
