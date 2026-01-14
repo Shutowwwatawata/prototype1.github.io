@@ -60,11 +60,25 @@
   grid-template-columns:1.05fr 0.95fr;
   gap:36px;
   align-items:center;
+  position:relative;
+}
+.csp-pyramid__content{
+  position:relative;
+  z-index:2;
 }
 @media (max-width: 860px){
   .csp-pyramid__grid{
     grid-template-columns:1fr;
     gap:22px;
+  }
+  .csp-pyramid__content{
+    padding:0;
+    background:transparent;
+    box-shadow:none;
+  }
+  .csp-pyramid__figure{
+    width:100%;
+    margin-left:0;
   }
 }
 .csp-pyramid__figure{
@@ -72,13 +86,33 @@
   border-radius:12px;
   overflow:hidden;
   background:#f4f6f9;
-  border:1px solid #dfe6f2;
+  border:none;
   min-height:220px;
 }
 .csp-pyramid__img{
   width:100%;
   height:auto;
   display:block;
+}
+@media (min-width: 861px){
+  .csp-pyramid__content{
+    grid-column:2;
+    padding:24px 28px;
+    background:rgba(255, 255, 255, 0.65);
+    border-radius:12px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255, 255, 255, 0.45);
+  }
+  .csp-pyramid__figure{
+    grid-column:1;
+    width:130%;
+    margin-right:-30%;
+    margin-left:0;
+    max-width:none;
+    z-index:1;
+  }
 }
 .csp-pyramid__title{
   margin:0 0 14px;
@@ -93,6 +127,11 @@
   font-size:1.125rem;
   line-height:2;
   letter-spacing:.02em;
+}
+.csp-pyramid__lead{
+  color:var(--color-primary);
+  font-size:1.2em;
+  font-weight:700;
 }
 @media (max-width: 700px){
   .csp-pyramid__text{
