@@ -142,7 +142,7 @@
   <section class="sec-cv">
     <div class="inner">
       <p class="text"><span>ふるさと納税で簡単1,000円～</span></p>
-      <a href="https://scskfurusato.jp/donation/proj-5d9c2818-40d3-2581-29eb-acc41b2506d4/input1?utm_source=scsk_site&amp;utm_medium=referral&amp;utm_campaign=0&amp;utm_content=0" class="btn">このプロジェクトに寄付する</a>
+      <button type="button" class="btn" data-donation-button>このプロジェクトに寄付する</button>
     </div>
   </section>
   <!-- /.sec-cv -->
@@ -351,7 +351,7 @@
   <section class="sec-cv">
     <div class="inner">
       <p class="text"><span>ふるさと納税で簡単1,000円～</span></p>
-      <a href="https://scskfurusato.jp/donation/proj-5d9c2818-40d3-2581-29eb-acc41b2506d4/input1?utm_source=scsk_site&amp;utm_medium=referral&amp;utm_campaign=0&amp;utm_content=0" class="btn">このプロジェクトに寄付する</a>
+      <button type="button" class="btn" data-donation-button>このプロジェクトに寄付する</button>
     </div>
   </section>
   <!-- /.sec-cv -->
@@ -572,11 +572,24 @@
   <section class="sec-cv">
     <div class="inner">
       <p class="text"><span>ふるさと納税で簡単1,000円～</span></p>
-      <a href="https://scskfurusato.jp/donation/proj-5d9c2818-40d3-2581-29eb-acc41b2506d4/input1?utm_source=scsk_site&amp;utm_medium=referral&amp;utm_campaign=0&amp;utm_content=0" class="btn">このプロジェクトに寄付する</a>
+      <button type="button" class="btn" data-donation-button>このプロジェクトに寄付する</button>
     </div>
   </section>
   <!-- /.sec-cv -->
 </main>
+
+<div id="donation-modal" class="donation-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="donation-modal-title" aria-describedby="donation-modal-desc" hidden>
+  <div class="donation-modal" tabindex="-1">
+    <p class="donation-modal__title" id="donation-modal-title">
+      <span class="donation-modal__badge">お知らせ</span>
+      寄付は行えません
+    </p>
+    <button type="button" class="donation-modal__close" id="donation-modal-close" aria-label="閉じる">×</button>
+    <p class="donation-modal__desc" id="donation-modal-desc">
+      このページはアンケート専用であるため実際に公開されているプロジェクトではありません。
+    </p>
+  </div>
+</div>
 
 <footer id="footer" class="footer">
   <div class="inner">

@@ -60,7 +60,8 @@ section{overflow:hidden}
 .sec-cv .text span::before, .sec-cv .text span::after{position:absolute;top:0;translate:0 0;display:block;content:"";width:2px;height:1.25em;background:var(--color-red)}
 .sec-cv .text span::before{left:-1em;rotate:-30deg}
 .sec-cv .text span::after{right:-1em;rotate:30deg}
-.sec-cv .btn{display:inline-block;max-width:100%;margin-top:.5em;padding:1em;color:var(--color-white);background:var(--color-red);border-radius:4px;-webkit-box-shadow:0 3px 6px rgba(0,0,0,.15);box-shadow:0 3px 6px rgba(0,0,0,.15)}
+.sec-cv .btn{display:inline-block;max-width:100%;margin-top:.5em;padding:1em;color:var(--color-white);background:var(--color-red);border:none;cursor:pointer;border-radius:4px;-webkit-box-shadow:0 3px 6px rgba(0,0,0,.15);box-shadow:0 3px 6px rgba(0,0,0,.15)}
+.sec-cv .btn:hover{opacity:.7}
 @media screen and (max-width: 768px){
   .sec-cv .btn{width:100%;font-size:1rem}
 }
@@ -746,4 +747,62 @@ section{overflow:hidden}
   .csp-donate__body{font-size:16px;}
   .csp-donate__useText{font-size:16px;}
   .csp-donate__closing{font-size:16px;}
+}
+.donation-modal-backdrop{position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.4);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  z-index:80;}
+.donation-modal{width:min(440px, 100%);
+  border-radius:16px;
+  background:#ffffff;
+  box-shadow:0 12px 36px rgba(0,0,0,.12);
+  padding:24px;
+  border:1px solid #ffe0d0;
+  outline:none;
+  animation:modal-pop .25s ease;
+  position:relative;}
+.donation-modal__title{margin:0 0 8px;
+  font-weight:800;
+  font-size:18px;
+  color:#9c1c1c;
+  display:flex;
+  align-items:center;
+  gap:8px;}
+.donation-modal__badge{display:inline-block;
+  background:#ff5e17;
+  color:#fff;
+  padding:4px 8px;
+  border-radius:12px;
+  font-size:12px;}
+.donation-modal__desc{margin:0 0 16px;
+  line-height:1.6;
+  color:#3e2100;}
+.donation-modal__close{position:absolute;
+  top:10px;
+  right:10px;
+  width:36px;
+  height:36px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #ffb347;
+  background:#fff7f0;
+  color:#9c1c1c;
+  border-radius:50%;
+  font-size:18px;
+  font-weight:800;
+  cursor:pointer;
+  transition:transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;}
+.donation-modal__close:hover{transform:translateY(-1px);
+  box-shadow:0 6px 16px rgba(255,94,23,.3);}
+.donation-modal__close:active{transform:translateY(0);
+  box-shadow:none;}
+.modal-open{overflow:hidden;}
+@keyframes modal-pop{
+  0%{transform:translateY(6px) scale(.98);opacity:0;}
+  100%{transform:translateY(0) scale(1);opacity:1;}
 }

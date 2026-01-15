@@ -112,3 +112,51 @@ $('.more-btn').on('click', function() {
   // }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const donationButtons = document.querySelectorAll("[data-donation-button]");
+  const modal = document.getElementById("donation-modal");
+  const closeBtn = document.getElementById("donation-modal-close");
+  if (!modal || donationButtons.length === 0) return;
+
+  modal.hidden = true;
+  modal.style.display = "none";
+  document.body.classList.remove("modal-open");
+
+  const openModal = () => {
+    modal.hidden = false;
+    modal.style.display = "flex";
+    document.body.classList.add("modal-open");
+    const focusTarget = modal.querySelector(".donation-modal");
+    if (focusTarget) {
+      focusTarget.focus();
+    }
+  };
+
+  const closeModal = () => {
+    modal.hidden = true;
+    modal.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  donationButtons.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      openModal();
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeModal);
+  }
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) {
+      closeModal();
+    }
+  });
+});
+
