@@ -71,7 +71,7 @@ section{overflow:hidden}
 .slide-down{height:auto !important;overflow:visible !important}
 .animated{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
 #project-detail{height:550px;overflow:hidden;position:relative;margin:0}
-.more-btn{position:absolute;bottom:0;left:0;width:100%;padding-top:5rem;text-align:center;background:-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(60%, rgb(255, 255, 255)));background:linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 60%)}
+.more-btn{position:absolute;bottom:0;left:0;width:100%;padding:3rem 0 3.3rem;text-align:center;background:-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(60%, rgb(255, 255, 255)));background:linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 60%)}
 .more-btn .btn{font-size:1.25rem;width:100%;max-width:28.75rem;margin-inline:auto;padding:.5em 1em;text-align:center;color:var(--color-black);background:var(--color-white);border:1px solid;border-radius:4px;cursor:pointer}
 #footer{padding-block:1.5625rem}
 @media screen and (max-width: 1280px){
@@ -116,7 +116,7 @@ section{overflow:hidden}
   background-color:#f9fbff;
   background-image:
     radial-gradient(980px 420px at 8% -10%, rgba(95, 183, 229, 0.73) 0%, rgba(95, 183, 229, 0) 65%),
-    radial-gradient(760px 460px at 92% 70%, rgba(28, 95, 168, 0.30) 0%, rgba(28, 95, 168, 0) 60%),
+    radial-gradient(760px 460px at 92% 70%, rgba(28, 95, 168, 0.65) 0%, rgba(28, 95, 168, 0) 60%),
     linear-gradient(180deg, #f9fbff 0%, #e6f1fb 52%, #ffffff 100%);}
 .csp-hero__inner{max-width:960px;
   text-align:center;}
