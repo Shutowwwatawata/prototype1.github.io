@@ -814,6 +814,15 @@
   max-width:1200px;
   margin:0 auto;
 }
+.csp-benefits__heading{
+  margin:0 0 28px;
+  text-align:center;
+  font-size:clamp(24px, 3.2vw, 36px);
+  line-height:1.2;
+  font-weight:800;
+  letter-spacing:.02em;
+  color:#111;
+}
 .csp-benefits__grid{
   display:grid;
   grid-template-columns:repeat(2, 1fr);
@@ -825,25 +834,45 @@
   padding:26px 28px 30px;
   box-shadow:0 8px 18px rgba(0,0,0,.08);
 }
+.csp-benefits__head{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:12px;
+}
 .csp-benefits__icon{
   width:56px;
   height:auto;
-  margin-bottom:16px;
 }
 .csp-benefits__title{
-  margin:0 0 12px;
+  margin:0;
   font-size:22px;
   line-height:1.4;
   font-weight:800;
   letter-spacing:.02em;
   color:#111;
 }
-.csp-benefits__text{
-  margin:0;
+.csp-benefits__action,
+.csp-benefits__result{
+  margin:0 0 10px;
   font-size:16px;
   line-height:1.8;
   letter-spacing:.02em;
   color:#111;
+}
+.csp-benefits__result{
+  margin-bottom:14px;
+}
+.csp-benefits__tag{
+  display:inline-block;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  color:#1e3c7a;
+  background:rgba(255,255,255,.75);
+  padding:4px 10px;
+  border-radius:999px;
+  border:1px solid rgba(30,60,122,.18);
 }
 @media (max-width: 768px){
   .csp-benefits__grid{
