@@ -572,17 +572,27 @@
 }
 .csp-env__bg{
   width:100%;
-  height:min(420px, 42vw);
-  min-height:240px;
+  height:min(210px, 21vw);
+  min-height:120px;
   object-fit:cover;
   display:block;
   filter:brightness(1.08) contrast(.92) saturate(.95);
+}
+.csp-env__hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,.70);
+  pointer-events:none;
 }
 .csp-env__hero::after{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(255,255,255,.70);
+  background:linear-gradient(to bottom,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.35) 45%,
+    rgba(255,255,255,.85) 100%);
   pointer-events:none;
 }
 .csp-env__overlay{
@@ -613,6 +623,17 @@
 @media (max-width: 640px){
   .csp-env__lead{
     font-size:16px;
+  }
+  .csp-env__overlay{
+    gap:10px;
+    padding:12px;
+  }
+  .csp-env__heroTitle{
+    font-size:20px;
+  }
+  .csp-env__heroText{
+    font-size:14px;
+    line-height:1.6;
   }
 }
 
