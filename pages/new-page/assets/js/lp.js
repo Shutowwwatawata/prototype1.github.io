@@ -75,6 +75,47 @@ if ($('.slider-company').length) {
       }
     ]
   });
+
+  // Enable trackpad horizontal scroll to navigate the slider smoothly.
+  var wheelDelta = 0;
+  var wheelLocked = false;
+  var wheelUnlockTimer = null;
+  var wheelThreshold = 40;
+
+  $slider.on('wheel', '.slick-list', function (event) {
+    var originalEvent = event.originalEvent;
+    if (!originalEvent) {
+      return;
+    }
+
+    var deltaX = originalEvent.deltaX || 0;
+    var deltaY = originalEvent.deltaY || 0;
+    var useDelta = Math.abs(deltaX) > Math.abs(deltaY) ? deltaX : 0;
+
+    if (!useDelta) {
+      return;
+    }
+
+    event.preventDefault();
+    wheelDelta += useDelta;
+
+    if (Math.abs(wheelDelta) < wheelThreshold || wheelLocked) {
+      return;
+    }
+
+    wheelLocked = true;
+    if (wheelDelta > 0) {
+      $slider.slick('slickNext');
+    } else {
+      $slider.slick('slickPrev');
+    }
+
+    wheelDelta = 0;
+    clearTimeout(wheelUnlockTimer);
+    wheelUnlockTimer = setTimeout(function () {
+      wheelLocked = false;
+    }, 250);
+  });
 }
 $('.slider-nav').slick({
   infinite: false,
